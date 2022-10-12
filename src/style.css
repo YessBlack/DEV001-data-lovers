@@ -1,0 +1,65 @@
+*, *::after,*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background-image: url(img/bg_RickAndMorty.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  background-position: center center;
+}
+.header img{
+  width:400px;
+  padding-right:20px;
+}
+
+.filtro{
+  background-color: #01040E;    ;
+  display:flex;
+  justify-content: space-between;
+  padding:.5rem;
+}
+.busqueda{
+  border:none;
+  border-radius: 10px 0px 0px 10px;
+  padding: 10px;
+}
+.btn-busqueda  {
+  display:flex;
+  align-items: center;
+}
+.btn-busqueda ion-icon {
+  background-color:rgb(202, 196, 196);
+  padding:10px;
+  border-radius: 0px 10px 10px 0px;
+}
+.btn-filtros {
+  display: flex;
+  align-items: center;
+  padding: .8rem;
+  background-color: #27F306;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.btn-filtros a {
+  text-decoration: none;
+  color: #01040E;
+}
+.menu-lateral {
+  display: none;
+}
+.menu-lateral-oculto {
+  display: none;
+}
+.menu-lateral-activo {
+  display: block;
+  background-color: red;
+}
+.menu-lateral {
+  width: 200px;
+  height: 60vh;
+  position: sticky;
+}
+
