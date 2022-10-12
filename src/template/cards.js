@@ -1,3 +1,4 @@
+
 export const tarjetas = (personaje) =>{
   const tarjeta =`
     <article class="card">
@@ -12,3 +13,4 @@ export const tarjetas = (personaje) =>{
     </article>`
   return(tarjeta);
 }
+

@@ -25,7 +25,7 @@ body {
 }
 .header-pg1 h1 {
   font-size: 1.5rem;
-}
+ }
 .video-bg {
   margin-top: 1rem;
   width: 100%;
@@ -79,8 +79,16 @@ body {
   color: var(--bgColorHeader);
   background-color: var(--colorSecondary);
   text-decoration: none;
-}
-/* ------------------- HEADER -----------------*/
+  font-size: x-large;
+  font-weight: bold;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  transition: .3s;
+ }
+ .btn-iniciar:hover{
+  box-shadow:2px 2px 25px 10px  #61d718;
+ }
+/* -------------------HEADER -----------------*/
 .header {
     height: 100px;
     background-image: url(img/header_2.jpg);
@@ -119,56 +127,53 @@ body {
 }
 .btn-busqueda .icon-search {
   background-color: white;
-  padding: 7px;
+  padding: 6.8px;
   border-radius: 0px 50px 50px 0px;
   border-top: 1px solid var(--colorPrimary);
   border-right: 1px solid var(--colorPrimary);
   border-bottom: 1px solid var(--colorPrimary);
 }
+
 /* ------------------- MENU -----------------*/
 .active {
-  display: block;
+  display: inline-block;
 }
-.inactive {
-  display: none;
+.inactive{
+    display:none;
 }
-.menu-filtro {
-  color: black;
-  font-size: 1.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: greenyellow;
-  padding: 10px;
-}
-.menu ul {
+ul {
   list-style: none;
 }
-.list-item a{
-  text-decoration: none;
-  color: var(--colorPrimary);
-  margin-left: .7rem;
-  color: black;
 
+.menu>li {
+  position: relative;
 }
-.menu_setting {
-  position: absolute;
-  width: 200px;
-  height: 100vh;
-  left: 0;
-  margin-top: 1rem;
-  z-index: 10;
-}
-.menu_setting li a {
-  background-color: var(--bgColorHeader);
+
+.menu li a {
+  background-color: greenyellow;
+  color: black;
   text-decoration: none;
-  padding: 1rem;
+  padding: 10px 15px;
   display: block;
 }
-.menu_setting li:hover {
+
+.menu li a:hover {
   background-color: aquamarine;
 }
 
+.menu_setting {
+  position: absolute;
+  min-width: 140px;
+}
+
+.menu_filtros {
+  padding-top: 10px;
+  border-radius: 20px;
+  border: none;
+  font-family: 'Lucida Sans', sans-serif;
+  font-weight: bold;
+  min-width: 140px;
+}
 /* ------------------- CARDS -----------------*/
 .cards {
   display: flex;
