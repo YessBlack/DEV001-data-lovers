@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers Rick and Morty</title>
-    <link rel="stylesheet" href="style.css"  />
-  </head>
-  <body>
-    <header class="header">
-        <img src="img/Rick_and_Morty.png">
-    </header>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <img src="img/Rick_and_Morty.png">
+  </header>
 
-    <section class="filtro">
-      <div class="btn-filtros">
-        <ion-icon name="arrow-down-outline"></ion-icon>
-        <a href="#">Filtrar</a>
-      </div>
-      <div class="btn-busqueda">
-        <input class="busqueda" placeholder="Busca a tu personaje" >
-        <ion-icon name="search-outline"></ion-icon>
-      </div>
-    </section>
+  <section class="filtro">
+    <div class="btn-filtros">
+      <ion-icon name="arrow-down-outline"></ion-icon>
+      <a href="#">Filtrar</a>
+    </div>
+    <div class="btn-busqueda">
+      <input class="busqueda" placeholder="Busca a tu personaje" >
+      <ion-icon name="search-outline"></ion-icon>
+    </div>
+  </section>
 
+  <main class="main">
     <section class="menu-lateral">
       <nav class="nav">
         <ul class="menu-list">
@@ -35,10 +38,12 @@
       </nav>
     </section>
 
-    <div id="root"></div>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <section class="cards"></section>
+  </main>
 
-    <script src="main.js" type="module"></script>
-  </body>
+<div id="root"></div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="main.js" type="module"></script>
+</body>
 </html>
