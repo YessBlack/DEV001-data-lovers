@@ -1,71 +1,79 @@
-*, *::after,*::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 .header {
-  background-image: url(img/bg_RickAndMorty.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 200px;
-  background-position: center center;
+    background-image: url(img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    background-position: center center;
 }
-.header img{
-  width:400px;
-  padding-right:20px;
+.header img {
+    width: 400px;
+    padding-right: 20px;
 }
-
-.filtro{
-  background-color: #01040E;    ;
-  display:flex;
-  justify-content: space-between;
-  padding:.5rem;
+.filtro {
+    background-color: #01040E;
+    ;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
 }
-.busqueda{
-  border:none;
-  border-radius: 10px 0px 0px 10px;
-  padding: 10px;
+.busqueda {
+    border: none;
+    border-radius: 10px 0px 0px 10px;
+    padding: 10px;
 }
-.btn-busqueda  {
-  display:flex;
-  align-items: center;
+.btn-busqueda {
+    display: flex;
+    align-items: center;
 }
 .btn-busqueda ion-icon {
-  background-color:rgb(202, 196, 196);
-  padding:10px;
-  border-radius: 0px 10px 10px 0px;
+    background-color: rgb(202, 196, 196);
+    padding: 10px;
+    border-radius: 0px 10px 10px 0px;
 }
-.btn-filtros {
-  display: flex;
-  align-items: center;
-  padding: .8rem;
-  background-color: #27F306;
-  text-decoration: none;
-  border-radius: 10px;
+ul {
+    list-style: none;
 }
-.btn-filtros a {
-  text-decoration: none;
-  color: #01040E;
+.menu>li {
+    position: relative;
 }
-.menu-lateral {
-  display: none;
+.menu li a {
+    background-color: greenyellow;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
 }
-.menu-lateral-oculto {
-  display: none;
+.menu li a:hover {
+    background-color: aquamarine;
 }
-.menu-lateral-activo {
-  display: block;
-  background-color: red;
+.menu_setting {
+    display: none;
+    position: absolute;
+    min-width: 140px;
 }
-.menu-lateral {
-  width: 200px;
-  height: 60vh;
-  position: sticky;
+.menu li:hover ul {
+    display: block;
+}
+.menu_filtros {
+    padding-top: 10px;
+    border-radius: 20px;
+    border: none;
+    font-family: 'Lucida Sans', sans-serif;
+    font-weight: bold;
+    min-width: 140px;
 }
 .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     padding: 1rem;
 }
 .card {
@@ -84,23 +92,10 @@
 .spacing {
     line-height: 2rem;
 }
+
 .footer-card {
     display: flex;
     justify-content: end;
-}
-.footer-card button {
-    width: 50px;
-    padding: 6px;
-    margin-right: 8px;
-    background-color: #c432d4;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: xx-large;
-    font-weight: bold;
-}
-.main {
-  display: flex;
-  flex-wrap: wrap;
+
 }
 
