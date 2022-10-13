@@ -10,12 +10,12 @@
     background-image: url(img/header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 200px;
+    height: 100px;
     background-position: center center;
 }
 
 .header img {
-    width: 400px;
+    width: 300px;
     padding-right: 20px;
 }
 
@@ -87,10 +87,9 @@ ul {
 .cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px;
-    margin-left: 180px;
-
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 
 .card {
@@ -98,7 +97,8 @@ ul {
     width: 100%;
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    margin-top:16px;
+    margin:16px;
+
 }
 
 .header-card img {
@@ -134,5 +134,16 @@ ul {
     border-radius: 50px;
     font-size: xx-large;
     font-weight: bold;
+
+}
+
+@media (min-width:1024px){
+ .header {
+    height: 200px; 
+}
+
+.header img {
+    width: 400px;
+    }
 
 }

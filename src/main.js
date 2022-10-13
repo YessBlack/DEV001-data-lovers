@@ -1,4 +1,4 @@
-import { tarjetas } from  './data.js';
+//import { tarjetas } from  './data.js';
 
  import data from './data/rickandmorty/rickandmorty.js';
  
@@ -7,13 +7,20 @@ import { tarjetas } from  './data.js';
 
  //Retorna el resultado de la fc de tarjetas, para realizarla
  data.results.forEach(personaje => {
+  const tarjetas = (personaje) =>{
+    const tarjeta=` <article class="card">
+    <header class="header-card">
+      <img src="${personaje.image}">
+    </header>
+    <div class="card-body spacing">
+     <p>${personaje.species}</p>
+      <p>${personaje.name}</p>
+      <p>${personaje.status}</p>
+    </div>
+  </article>`
+   return(tarjeta);
+  }
    cards.insertAdjacentHTML("beforeend",tarjetas(personaje))
  })
-
-const newArray= (razaHumana => {
-  data.results.species.filter(species.length >6)
-  console.log(razaHumana)
-  newArray=razaHumana.value;
-console.log(newArray);
-
-})
+ 
+ 
