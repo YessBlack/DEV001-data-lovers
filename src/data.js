@@ -1,18 +1,26 @@
-
-export  const tarjetas = (personaje) =>{
-  const tarjeta=` <article class="card">
-  <header class="header-card">
-    <img src="${personaje.image}">
-  </header>
-  <div class="card-body spacing">
-   <p>${personaje.species}</p>
-    <p>${personaje.name}</p>
-    <p>${personaje.status}</p>
-  </div>
-</article>`
- return(tarjeta);
+//Filtro para reducir el array
+export const getData = (data) => {
+   const dataReduce = data.results.slice(1,100)
+   return dataReduce
+}
+//Filtrar personajes muertos
+export const getDeads =(data) => {
+  const arrayDeads = getData(data).filter(e=>e.status=="Dead");
+  return arrayDeads
 }
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+//Filtrar personajes vivos
+export const getAlive=(data)=>{
+  const arrayAlive= getData(data).filter(e=>e.status=="Alive");
+  return arrayAlive
+}
+//Filtrat los personajes Femeninos
+export const getFemale=(data)=>{
+  const arrayFemale= getData(data).filter(e=>e.gender=="Female");
+  return arrayFemale
+}
+//Filtrar los personajes Masculinos
+export const getMale=(data)=>{
+  const arrayMale= getData(data).filter(e=>e.gender=="Male");
+  return arrayMale
+}
