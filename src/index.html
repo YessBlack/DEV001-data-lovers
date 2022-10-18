@@ -10,7 +10,26 @@
   <header class="header">
     <img src="img/logo.png">
   </header>
-  <section class="filtro"></section>
+  <section class="filtro">
+    <nav class="menu">
+      <ul class="menu_filtros">
+        <li class="menu_item"> <a href="#" class="menu_link" id="filtro"> Filtros</a>
+          <ul class="menu_setting">
+            <li class="menu_inside"> <a href="#" id="todos">Todos</a> </li>
+            <li class="menu_inside"> <a href="#" id="hombre"> Hombre</a></li>
+            <li class="menu_inside"> <a href="#" id="mujer">Mujer</a></li>
+            <li class="menu_inside"> <a href="#" id="vivos">Vivos</a> </li>
+            <li class="menu_inside"> <a href="#" id="muertos">Muertos</a> </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="btn-busqueda">
+      <input class="busqueda" placeholder="Busca a tu personaje">
+        <ion-icon name="search-outline"></ion-icon>
+    </div>
+  </section>
+
   <section class="cards"></section>
 
   <div id="root"></div>

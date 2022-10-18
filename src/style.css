@@ -49,6 +49,63 @@
     color: #01040E;
     font-weight: bold;
 }
+.filtro {
+  background-color: #01040E;
+  ;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+.busqueda {
+  border: none;
+  border-radius: 10px 0px 0px 10px;
+  padding: 10px;
+}
+.busqueda:focus {
+  outline: none;
+}
+.btn-busqueda {
+  display: flex;
+  align-items: center;
+}
+.btn-busqueda ion-icon {
+  background-color: white;
+  padding: 10px;
+  border-radius: 0px 10px 10px 0px;
+}
+ul {
+  list-style: none;
+}
+.menu>li {
+  position: relative;
+}
+.menu li a {
+  background-color: greenyellow;
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+.menu li a:hover {
+  background-color: aquamarine;
+}
+.menu_setting {
+  display: none;
+  position: absolute;
+  min-width: 140px;
+}
+.menu li:hover ul {
+  display: block;
+}
+.menu_filtros {
+  padding-top: 10px;
+  border-radius: 20px;
+  border: none;
+  font-family: 'Lucida Sans', sans-serif;
+  font-weight: bold;
+  min-width: 140px;
+}
+
 @media (min-width:1024px){
   .header {
     height: 200px;
