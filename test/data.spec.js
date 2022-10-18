@@ -1,4 +1,4 @@
-import { getData, getDeads, getAlive,getMale, getFemale} from '../src/data.js';
+import { getData, getDeads, getAlive,getMale, getFemale, } from '../src/data.js';
 import data from '../src/data/rickandmorty/rickandmorty.js';
 
 describe('getData', () => {
