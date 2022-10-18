@@ -9,6 +9,7 @@ const btnMale = document.getElementById("hombre");
 const btnFemale = document.getElementById("mujer");
 const btnAlive = document.getElementById("vivos");
 const btnDead = document.getElementById("muertos");
+const busqueda = document.querySelector(".busqueda")
 
 //Retorna el resultado de la fc de tarjetas, para realizarla
 getData(data).forEach(personaje => {
@@ -153,3 +154,35 @@ btnDead.addEventListener("click", (e) => {
     cards.insertAdjacentHTML("beforeend", tarjetasDead(personajeDead));
   })
 })
+
+//Busqueda de personjaes le agrego evento al input con keyup
+busqueda.addEventListener("keyup", (e) => {
+  e.preventDefault();
+  //busqueda de personaje con indexOf
+  const busqueda = document.querySelector(".busqueda")
+  let textoBusqueda = busqueda.value.toLowerCase();
+  cards.innerHTML = "";
+      for (let nombre of getData(data)) {
+      let nombrePersonaje = nombre.name.toLowerCase();
+      if (nombrePersonaje.indexOf(textoBusqueda) != -1) {
+        console.log(nombrePersonaje);
+const busquedaPersonajes=
+             ` <article class="card">
+          <header class="header-card">
+            <img src="${nombre.image}">
+          </header>
+          <div class="card-body spacing">
+           <p>${nombre.species}</p>
+            <p>${nombre.name}</p>
+            <p>${nombre.status}</p>
+          </div>
+        </article>`
+         
+        
+        //Coloco los personajes en las tarjetas
+        // const resultAlive = getAlive(data);
+        // resultAlive.forEach(personajeAlive => {
+          cards.insertAdjacentHTML("beforeend", busquedaPersonajes);
+        // })
+      }
+      }});
