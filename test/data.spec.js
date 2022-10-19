@@ -1,4 +1,5 @@
 import { getData, getDeads, getAlive,getMale, getFemale } from '../src/data.js';
+
 import data from '../src/data/rickandmorty/rickandmorty.js';
 
 describe('getData', () => {
@@ -11,7 +12,9 @@ describe('getData', () => {
   });
 });
 
+
 describe('getDeads', () => {
+
   it('deberia ser una función', () => {
     expect(typeof getDeads).toBe('function');
   });
@@ -52,6 +55,34 @@ describe('getFemale', () => {
   it('deberia ser una función', () => {
     expect(typeof getFemale).toBe('function');
   });
+  it('Que getFemale(data) no sea igual a (data)', () => {
+    expect(getFemale(data)).not.toBe(data);
+  });
+});
+
+describe('Deberia ser una función', () => {
+  it('deberia ser una función', () => {
+    expect(typeof getAlive).toBe('function');
+  });
+
+  it('Que getAlive(data) no sea igual a (data)', () => {
+    expect(getAlive(data)).not.toBe(data);
+  });
+});
+describe('Deberia ser una función', () => {
+  it('deberia ser una función', () => {
+    expect(typeof getMale).toBe('function');
+  });
+
+  it('Que getMale(data) no sea igual a (data)', () => {
+    expect(getMale(data)).not.toBe(data);
+  });
+});
+describe('Deberia ser una función', () => {
+  it('deberia ser una función', () => {
+    expect(typeof getFemale).toBe('function');
+  });
+
   it('Que getFemale(data) no sea igual a (data)', () => {
     expect(getFemale(data)).not.toBe(data);
   });

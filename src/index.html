@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rick and Morty</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Lovers Rick and Morty</title>
+  <link href="https://file.myfontastic.com/eStkfdYmFUFyU4sM2fYSZS/icons.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
     <img src="img/logo.png">
   </header>
   <section class="filtro">
-    <nav class="menu">
-      <ul class="menu_filtros">
-        <li class="menu_item"> <a href="#" class="menu_link" id="filtro"> Filtros</a>
-          <ul class="menu_setting">
-            <li class="menu_inside"> <a href="#" id="todos">Todos</a> </li>
-            <li class="menu_inside"> <a href="#" id="hombre"> Hombre</a></li>
-            <li class="menu_inside"> <a href="#" id="mujer">Mujer</a></li>
-            <li class="menu_inside"> <a href="#" id="vivos">Vivos</a> </li>
-            <li class="menu_inside"> <a href="#" id="muertos">Muertos</a> </li>
-          </ul>
-        </li>
+    <nav class="menu ">
+      <ul class="menu-filtro">
+        <li class="icon-filter list-item"><a href="#">Filtrar</a></li>
+      </ul>
+      <ul class="menu_setting inactive">
+        <li class="menu_inside"> <a href="#" id="todos">Todos</a> </li>
+        <li class="menu_inside"> <a href="#" id="hombre"> Hombre</a></li>
+        <li class="menu_inside"> <a href="#" id="mujer">Mujer</a></li>
+        <li class="menu_inside"> <a href="#" id="vivos">Vivos</a> </li>
+        <li class="menu_inside"> <a href="#" id="muertos">Muertos</a> </li>
       </ul>
     </nav>
     <div class="btn-busqueda">
       <input class="busqueda" placeholder="Busca a tu personaje">
-        <ion-icon name="search-outline"></ion-icon>
+      <span class="icon-search"></span>
     </div>
   </section>
 
   <section class="cards"></section>
-
-  <div id="root"></div>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <script src="main.js" type="module"></script>
 </body>

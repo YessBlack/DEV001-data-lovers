@@ -5,8 +5,8 @@ export const tarjetas = (personaje) =>{
         <img src="${personaje.image}">
       </header>
       <div class="card-body spacing">
-        <p>${personaje.species}</p>
-        <p>${personaje.name}</p>
+        <p class="title-card">${personaje.species}</p>
+        <p class="name-character">${personaje.name}</p>
         <p>${personaje.status}</p>
       </div>
     </article>`
