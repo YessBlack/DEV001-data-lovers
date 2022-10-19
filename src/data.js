@@ -1,26 +1,32 @@
-//Filtro para reducir el array
+//Funcion para obtener los personajes de la data
 export const getData = (data) => {
-   const dataReduce = data.results.slice(1,100)
-   return dataReduce
-}
-//Filtrar personajes muertos
-export const getDeads =(data) => {
-  const arrayDeads = getData(data).filter(e=>e.status=="Dead");
-  return arrayDeads
+  const dataReduce = data.results.slice(1,100)
+  return dataReduce
 }
 
-//Filtrar personajes vivos
-export const getAlive=(data)=>{
-  const arrayAlive= getData(data).filter(e=>e.status=="Alive");
-  return arrayAlive
+//Funcion para obtener los personajes de la data filtrados por status "Dead"
+export const getDeads =(data) => {
+  const dataDeads = getData(data).filter( e => e.status=="Dead")
+  return dataDeads
 }
-//Filtrat los personajes Femeninos
-export const getFemale=(data)=>{
-  const arrayFemale= getData(data).filter(e=>e.gender=="Female");
-  return arrayFemale
+
+//Funcion para obtener los personajes de la data filtrados por status "Alive"
+export const getAlive =(data) => {
+  const dataAlive = getData(data).filter( e => e.status=="Alive")
+  return dataAlive
 }
-//Filtrar los personajes Masculinos
-export const getMale=(data)=>{
-  const arrayMale= getData(data).filter(e=>e.gender=="Male");
-  return arrayMale
+
+//Funcion para obtener los personajes de la data filtrados por gender "Male"
+export const getMale =(data) => {
+  const dataMale = getData(data).filter( e => e.gender == "Male")
+  return dataMale
 }
+
+//Funcion para obtener los personajes de la data filtrados por gender "Female"
+export const getFemale =(data) => {
+  const dataFemale = getData(data).filter( e => e.gender == "Female")
+  return dataFemale
+}
+
+
+
