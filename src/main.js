@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { getData, getDeads, getAlive, getFemale, getMale,ascendente, descendente } from './data.js';
 import {tarjetas} from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
@@ -12,13 +13,37 @@ $('.menu_setting').classList.toggle('inactive');})
 
 $('.menu_setting').addEventListener("click",()=>{
 $('.menu_setting').classList.toggle('inactive');})
+=======
+import { getData, getDeads, getAlive, getFemale, getMale } from './data.js';
+import { tarjetas } from './template/cards.js';
+import data from './data/rickandmorty/rickandmorty.js';
+
+const $ = (selector) => document.querySelector(selector);
+
+//Ocultar y Mostrar Menu
+const showHideMenu = () => {
+  setTimeout(() => {
+    $('.menu_setting').classList.toggle('inactive');
+  }, 1000);
+}
+
+$('.menu-filtro').addEventListener('click', e => {
+  e.preventDefault()
+  $('.menu_setting').classList.toggle('active');
+  $('.menu_setting').classList.toggle('inactive');
+})
+>>>>>>> dcabe8dc6e29c9c89a960792e83a176ee0973835
 
 //Retorna el resultado de la fx de tarjetas, para realizarla
 getData(data).forEach(personaje => {
   $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje))
 })
 
+<<<<<<< HEAD
 //Creo un evento para volver a ver las tarjetas de todos los personajes
+=======
+//Evento para volver a ver las tarjetas de todos los personajes
+>>>>>>> dcabe8dc6e29c9c89a960792e83a176ee0973835
 $('#todos').addEventListener("click", () => {
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
@@ -26,9 +51,14 @@ $('#todos').addEventListener("click", () => {
   resulTodos.forEach(personaje => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje));
   })
+  showHideMenu()
 })
 
+<<<<<<< HEAD
 // Creo un evento que al realizar click se muestres los personajes filtrados por gender"Male"
+=======
+// Evento que al realizar click se muestres los personajes filtrados por gender"Male"
+>>>>>>> dcabe8dc6e29c9c89a960792e83a176ee0973835
 $('#hombre').addEventListener("click", () => {
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
@@ -36,9 +66,14 @@ $('#hombre').addEventListener("click", () => {
   resultMale.forEach(personajeMale => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personajeMale));
   })
+  showHideMenu()
 })
 
+<<<<<<< HEAD
 // Creo un evento que al realizar click se muestres los personajes filtrados por gender "Female"
+=======
+// Evento que al realizar click se muestres los personajes filtrados por gender "Female"
+>>>>>>> dcabe8dc6e29c9c89a960792e83a176ee0973835
 $('#mujer').addEventListener("click", () => {
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
@@ -46,6 +81,7 @@ $('#mujer').addEventListener("click", () => {
   resultFemale.forEach(personajeFemale => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personajeFemale));
   })
+  showHideMenu()
 })
 
 // Creo un evento que al realizar click se muestres los personajes filtrados por gender "Alive"
@@ -56,9 +92,14 @@ $('#vivos').addEventListener("click", () => {
   resultAlive.forEach(personajeAlive => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personajeAlive));
   })
+  showHideMenu()
 })
 
+<<<<<<< HEAD
 //Creo un evento al realizar click en el enlace y filtro los personajes por status "Dead" 
+=======
+//Creo un evento al realizar click en el enlace y filtro los personajes por status "Dead"
+>>>>>>> dcabe8dc6e29c9c89a960792e83a176ee0973835
 $('#muertos').addEventListener("click", () => {
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
@@ -66,6 +107,7 @@ $('#muertos').addEventListener("click", () => {
   resultDead.forEach(personajeDead => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personajeDead));
   })
+  showHideMenu()
 })
 
 //Busqueda de personjaes le agrego evento al input con keyup
@@ -105,3 +147,11 @@ $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje));
 })
 
 
+<<<<<<< HEAD
+=======
+/*
+ console.log(getData(data).sort(function(a,b){
+ if(a.name < b.name){
+ return -1}}))
+*/
+>>>>>>> dcabe8dc6e29c9c89a960792e83a176ee0973835
