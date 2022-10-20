@@ -27,6 +27,3 @@ export const getFemale =(data) => {
   const dataFemale = getData(data).filter( e => e.gender == "Female")
   return dataFemale
 }
-
-
-
