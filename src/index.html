@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=375px, initial-scale=1.0">
 
   <title>Data Lovers Rick and Morty</title>
+  <link href="https://file.myfontastic.com/eStkfdYmFUFyU4sM2fYSZS/icons.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -14,21 +18,27 @@
     <img src="img/logo.png">
   </header>
   <section class="filtro">
-    <nav class="menu">
+    <nav class="menu ">
       <ul class="menu_filtros">
-        <li class="menu_item"> <a href="#" class="menu_link" id="filtro"> Filtros</a>
-          <ul class="menu_setting">
-            <li class="menu_inside"> <a href="#" id="todos">Todos</a> </li>
-            <li class="menu_inside"> <a href="#" id="hombre"> Hombre</a></li>
-            <li class="menu_inside"> <a href="#" id="mujer">Mujer</a></li>
-            <li class="menu_inside"> <a href="#" id="vivos">Vivos</a> </li>
-            <li class="menu_inside"> <a href="#" id="muertos">Muertos</a> </li>
-          </ul>
-        </li>
+        <li class="icon-filter list-item"><a href="#">Filtrar</a></li>
+      </ul>
+      <ul class="menu_setting inactive">
+        <li class="menu_inside"> <a href="#" id="todos">Todos</a> </li>
+        <li class="menu_inside"> <a href="#" id="hombre"> Hombre</a></li>
+        <li class="menu_inside"> <a href="#" id="mujer">Mujer</a></li>
+        <li class="menu_inside"> <a href="#" id="vivos">Vivos</a> </li>
+        <li class="menu_inside"> <a href="#" id="muertos">Muertos</a> </li>
       </ul>
     </nav>
-    <div class="btn-busqueda">
-      <input class="busqueda" placeholder="Busca a tu personaje">
+     <div class="ordenar">
+    <select  class="orden">
+      <option  value="Ordenar">Ordenar por</option>
+      <option  value="1"> A-Z</option>
+      <option value="2">Z-A</option>
+    </select>
+  </div>
+      <div class="btn-busqueda">
+          <input class="busqueda" placeholder="Busca a tu personaje">
       <ion-icon name="search-outline"></ion-icon>
     </div>
   </section>

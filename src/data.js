@@ -25,29 +25,20 @@ export const getMale=(data)=>{
   return arrayMale
 }
 // //Ordenar los personajes de la A-Z sin filtro
-export const ascendente=(data,opcion)=>{
-  if(opcion=="1" && $('#muertos')){
-  let a=getDeads(data).sort(function(a,b){
+export const ascendente=(data)=>{
+  const a=getData(data).sort(function(a,b){
     if(a.name < b.name){
-          return -1}
+    return -1}
     })
-    if(opcion=="1" && $('#vivos')){
-      let a=getAlive(data).sort(function(a,b){
-        if(a.name < b.name){
-               return -1}
-        })
     return a
-}}}
-// Ordenar los personajes de a Z-A sin filtro
-export const descendente=(data,opcion)=>{
-  if(opcion=="2" && $('#muertos')){
-    let a=getDeads(data).sort(function(a,b){
-      if(a.name > b.name){
-        
-      return -1}
-      })
-      if(opcion=="2" && $('#vivos')){
-        let a=getAlive(data).sort(function(a,b){
-          if(a.name < b.name){
-                     return -1}
-          })}}}
+}
+//Ordenar los personajes de a Z-A sin filtro
+export const descendente=(data)=>{
+  const b=getData(data).sort(function(a,b){
+    if(a.name>b.name){
+      return -1
+    }
+  }
+  )
+  return b
+}
