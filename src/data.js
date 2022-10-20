@@ -21,15 +21,13 @@ export const getMale =(data) => {
   const dataMale = getData(data).filter( e => e.gender == "Male")
   return dataMale
 }
-<<<<<<< HEAD
-// //Ordenar los personajes de la A-Z sin filtro
-export const ascendente=(data)=>{
-  const a=getData(data).sort(function(a,b){
-    if(a.name < b.name){
-    return -1}
-    })
-    return a
+
+//Funcion para obtener los personajes de la data filtrados por gender "Female"
+export const getFemale =(data) => {
+  const dataFemale = getData(data).filter( e => e.gender == "Female")
+  return dataFemale
 }
+
 //Ordenar los personajes de a Z-A sin filtro
 export const descendente=(data)=>{
   const b=getData(data).sort(function(a,b){
@@ -40,7 +38,7 @@ export const descendente=(data)=>{
   )
   return b
 }
-=======
+
 
 //Funcion para obtener los personajes de la data filtrados por gender "Female"
 export const getFemale =(data) => {
@@ -48,6 +46,3 @@ export const getFemale =(data) => {
   return dataFemale
 }
 
-
-
->>>>>>> dcabe8dc6e29c9c89a960792e83a176ee0973835

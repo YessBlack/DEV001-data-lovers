@@ -16,7 +16,7 @@ export const tarjetas = (personaje) => {
  
 =======
 export const tarjetas = (personaje) =>{
-  const tarjeta=`
+  const tarjeta =`
     <article class="card">
       <header class="header-card">
         <img src="${personaje.image}">

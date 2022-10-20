@@ -24,7 +24,7 @@ const $ = (selector) => document.querySelector(selector);
 const showHideMenu = () => {
   setTimeout(() => {
     $('.menu_setting').classList.toggle('inactive');
-  }, 1000);
+  }, 500);
 }
 
 $('.menu-filtro').addEventListener('click', e => {
