@@ -132,7 +132,6 @@ body {
 .inactive {
   display: none;
 }
-
 .menu-filtro {
   color: black;
   font-size: 1.3rem;
@@ -141,9 +140,6 @@ body {
   align-items: center;
   background-color: greenyellow;
   padding: 10px;
-}
-.menu-filtro span {
-  padding: 5px;
 }
 .menu ul {
   list-style: none;

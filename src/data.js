@@ -27,3 +27,14 @@ export const getFemale =(data) => {
   const dataFemale = getData(data).filter( e => e.gender == "Female")
   return dataFemale
 }
+
+//Ordenar los personajes de a Z-A sin filtro
+export const descendente=(data)=>{
+  const b=getData(data).sort(function(a,b){
+    if(a.name>b.name){
+      return -1
+    }
+  }
+  )
+  return b
+}
