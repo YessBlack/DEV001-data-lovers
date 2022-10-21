@@ -24,14 +24,17 @@ export const getMale=(data)=>{
  const arrayMale= getData(data).filter(e=>e.gender=="Male");
  return arrayMale
 }
-// //Ordenar los personajes de la A-Z sin filtro
+//Ordenar los personajes de a A-Z sin filtro
 export const ascendente=(data)=>{
- const a=getData(data).sort(function(a,b){
-   if(a.name < b.name){
-   return -1}
-   })
-   return a
-}
+  const a=getData(data).sort(function(a,b){
+    if(a.name<b.name){
+      return -1
+    }
+  }
+  )
+  return a
+ }
+
 //Ordenar los personajes de a Z-A sin filtro
 export const descendente=(data)=>{
  const b=getData(data).sort(function(a,b){
