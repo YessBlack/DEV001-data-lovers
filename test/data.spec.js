@@ -1,4 +1,4 @@
-import { getData, getDeads, getAlive,getMale, getFemale } from '../src/data.js';
+import { getData, getDeads, getAlive,getMale, getFemale,ascendente,descendente } from '../src/data.js';
 
 import data from '../src/data/rickandmorty/rickandmorty.js';
 
@@ -19,7 +19,7 @@ describe('getDeads', () => {
     expect(typeof getDeads).toBe('function');
   });
 
-  it('Que getDeads(data) no tenga la palabra "Alive"', () => {
+  it('Que getDeads(data) debería retornar un arreglo donde el status=="Dead"', () => {
     const deads = getDeads(data);
     deads.forEach((dead) => {
       expect(dead.status).toEqual("Dead");
@@ -34,7 +34,7 @@ describe('getAlive', () => {
     expect(typeof getAlive).toBe('function');
   });
 
-  it('Que getAlive(data) no sea igual a (data)', () => {
+  it('Que getAlive(data) debería retornar un arreglo donde el status=="Alive"', () => {
     const alives = getAlive(data);
     alives.forEach((alive) => {
       expect(alive.status).toEqual("Alive");
@@ -49,7 +49,7 @@ describe('getMale', () => {
     expect(typeof getMale).toBe('function');
   });
 
-  it('Que getMale(data) no sea igual a (data)', () => {
+  it('Que getMale(data) debería retornar un arreglo donde el gender=="Male"', () => {
     const males = getMale(data);
     males.forEach((male) => {
       expect(male.gender).toEqual("Male");
@@ -62,7 +62,7 @@ describe('getFemale', () => {
     expect(typeof getFemale).toBe('function');
   });
 
-  it('Que getFemale(data) no sea igual a (data)', () => {
+  it('Que getFemale(data) debería retornar un arreglo donde el gender=="Female"', () => {
     const females = getFemale(data);
     females.forEach((female) => {
       expect(female.gender).toEqual("Female");
@@ -70,4 +70,31 @@ describe('getFemale', () => {
   });
 
 });
+  
+describe ('ascendente',()=>{
+  it('Debería ser una función', ()=>{
+    expect(typeof ascendente).toBe('function');
+  });
+});
 
+it('Que ascendete(data) retorne el array ordenado de la A-Z', ()=>{
+  const arrAesc=getData(data).sort(((a,b)=>{
+    if(a.name<b.name){
+      return -1 }
+      }));
+  expect(ascendente(getData(data))).toStrictEqual(arrAesc)
+});
+
+  describe ('descendente',()=>{
+    it('Debería ser una función', ()=>{
+      expect(typeof descendente).toBe('function');
+    });
+  });
+  
+  it('Que ascendete(data) retorne el array ordenado de la Z-A', ()=>{
+    const arrDesc=getData(data).sort(((a,b)=>{
+      if(a.name>b.name){
+        return -1 }
+        }));
+    expect(descendente(getData(data))).toStrictEqual(arrDesc)
+  });

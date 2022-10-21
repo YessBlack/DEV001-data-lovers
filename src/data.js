@@ -26,22 +26,22 @@ export const getMale=(data)=>{
 }
 //Ordenar los personajes de a A-Z sin filtro
 export const ascendente=(data)=>{
-  const a=getData(data).sort(function(a,b){
+  const a= data.sort((a,b)=>{
     if(a.name<b.name){
-      return -1
-    }
-  }
+      return -1 }
+      }
+
   )
-  return a
- }
+  return a }
 
 //Ordenar los personajes de a Z-A sin filtro
 export const descendente=(data)=>{
- const b=getData(data).sort(function(a,b){
+  const b= data.sort((a,b)=>{
    if(a.name>b.name){
      return -1
    }
  }
  )
- return b
-}
+ //console.log(Array.isArray(descendente));
+ return b}
+

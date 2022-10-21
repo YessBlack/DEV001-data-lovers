@@ -200,16 +200,15 @@ ul {
 .card .card-body {
   padding: 1rem;
 }
-.title-card {
-  color: var(--colorTitleCard);
-  font-weight: 700;
-  font-size: 1.2rem;
-}
 .name-character{
   text-overflow: ellipsis;
   overflow: hidden;
   width: 150px;
   white-space: nowrap;
+  color: var(--colorTitleCard);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: .5px;
 }
 .spacing {
   line-height: 2rem;
