@@ -1,5 +1,4 @@
 import { getData, getDeads, getAlive,getMale, getFemale,ascendente,descendente } from '../src/data.js';
-
 import data from '../src/data/rickandmorty/rickandmorty.js';
 
 describe('getData', () => {
@@ -7,8 +6,8 @@ describe('getData', () => {
     expect(typeof getData).toBe('function');
   });
 
-  it('Deberia retornar un array con 100 personajes ', () => {
-    expect(getData(data)).toHaveLength(129);
+  it('return `array`', () => {
+    expect(getData(data)).toHaveLength(99);
   });
 });
 
@@ -19,7 +18,7 @@ describe('getDeads', () => {
     expect(typeof getDeads).toBe('function');
   });
 
-  it('Deberia retornar un array donde status==dead', () => {
+  it('Que getDeads(data) no tenga la palabra "Alive"', () => {
     const deads = getDeads(data);
     deads.forEach((dead) => {
       expect(dead.status).toEqual("Dead");
@@ -34,7 +33,7 @@ describe('getAlive', () => {
     expect(typeof getAlive).toBe('function');
   });
 
-  it('Deberia retornar un array donde status==alive', () => {
+  it('Que getAlive(data) no sea igual a (data)', () => {
     const alives = getAlive(data);
     alives.forEach((alive) => {
       expect(alive.status).toEqual("Alive");
@@ -49,7 +48,7 @@ describe('getMale', () => {
     expect(typeof getMale).toBe('function');
   });
 
-  it('Deberia retornar un array donde gender==male', () => {
+  it('Que getMale(data) no sea igual a (data)', () => {
     const males = getMale(data);
     males.forEach((male) => {
       expect(male.gender).toEqual("Male");
@@ -63,7 +62,7 @@ describe('getFemale', () => {
     expect(typeof getFemale).toBe('function');
   });
 
-  it('Deberia retornar un array donde gender==female', () => {
+  it('Que getFemale(data) no sea igual a (data)', () => {
     const females = getFemale(data);
     females.forEach((female) => {
       expect(female.gender).toEqual("Female");
@@ -72,32 +71,30 @@ describe('getFemale', () => {
 
 });
 
-describe('ascendente', () => {
-  it('deberia ser una función', () => {
+describe ('ascendente',()=>{
+  it('Debería ser una función', ()=>{
     expect(typeof ascendente).toBe('function');
-  });
-
-  it('Que ascendete(data) retorne el array ordenado de la A-Z', ()=>{
-    const arrAsc = getData(data).sort((a,b) => {
-      if(a.name<b.name) {
-        return -1
-      }
-    })
-    expect(ascendente(getData(data))).toStrictEqual(arrAsc)
   });
 });
 
-describe('descendente', () => {
-  it('deberia ser una función', () => {
-    expect(typeof ascendente).toBe('function');
-  });
+it('Que ascendete(data) retorne el array ordenado de la A-Z', ()=>{
+  const arrAesc=getData(data).sort(((a,b)=>{
+    if(a.name<b.name){
+      return -1 }
+      }));
+  expect(ascendente(getData(data))).toStrictEqual(arrAesc)
+});
 
-  it('Que ascendete(data) retorne un array ordenado de la Z-A', ()=>{
-    const arrDes = getData(data).sort((a,b) => {
-      if(a.name > b.name) {
-        return -1
-      }
-    })
-    expect(descendente(getData(data))).toStrictEqual(arrDes)
+describe ('descendente',()=>{
+  it('Debería ser una función', ()=>{
+    expect(typeof descendente).toBe('function');
   });
+});
+
+it('Que descendente(data) retorne el array ordenado de la Z-A', ()=>{
+  const arrDesc=getData(data).sort(((a,b)=>{
+    if(a.name>b.name){
+      return -1 }
+      }));
+  expect(descendente(getData(data))).toStrictEqual(arrDesc)
 });

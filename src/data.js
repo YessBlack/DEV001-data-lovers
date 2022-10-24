@@ -24,22 +24,29 @@ export const getMale=(data)=>{
  const arrayMale= getData(data).filter(e=>e.gender=="Male");
  return arrayMale
 }
+//Filtrar por gender Unknow
+export const getUnknow=(data)=>{
+  const arrayUnknow=getData(data).filter(e=>e.gender=="unknown");
+  return arrayUnknow
+}
 //Ordenar los personajes de a A-Z sin filtro
 export const ascendente=(data)=>{
-  const a = data.sort(function(a,b){
-    if (a.name < b.name) {
-      return -1;
-    }
-  })
-  return a
- }
+  const a= data.sort((a,b)=>{
+    if(a.name<b.name){
+      return -1 }
+      }
+
+  )
+  return a }
 
 //Ordenar los personajes de a Z-A sin filtro
 export const descendente=(data)=>{
- const b=data.sort(function(a,b){
-  if (a.name > b.name) {
-    return -1;
-  }
-})
- return b
-}
+  const b= data.sort((a,b)=>{
+   if(a.name>b.name){
+     return -1
+   }
+ }
+ )
+ //console.log(Array.isArray(descendente));
+ return b}
+

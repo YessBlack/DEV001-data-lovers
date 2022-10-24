@@ -34,23 +34,24 @@
     </div>
     <div class="ordenar">
       <select  class="orden">
-        <option  value="Ordenar">Ordenar por</option>
+        <option  value="Ordenar" selected="return-true" disabled>Ordenar por</option>
         <option  value="1"> A-Z</option>
         <option value="2">Z-A</option>
       </select>
     </div>
-
-    <div>
-      <button class="btn-estadisticas">Estadisticas</button>
+    <div class="grafica">
+      <button class="btnGrafica">Gráfica de personajes</button>
     </div>
-
   </section>
 
   <section class="cards"></section>
-  <section class="graphics">
-    <canvas id="myChart" width="400" height="400"></canvas>
+  <section class="graficos">
+    <canvas id="myChart"></canvas>
   </section>
-
+ <footer class="footer-pg2">
+  <p>Proyecto Data Lovers Angelica & Natalia</p>
+ </footer>
   <script src="main.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
 </body>
 </html>
