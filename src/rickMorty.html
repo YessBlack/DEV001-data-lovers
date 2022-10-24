@@ -15,9 +15,10 @@
     <img src="img/logo.png">
   </header>
   <section class="filtro">
-    <nav class="menu ">
+    <nav class="menu">
       <ul class="menu_filtros">
-        <li class="icon-filter list-item" ><a href="#">Filtrar</a></li>
+        <span class="icon-filter "></span>
+        <li class="list-item" ><a href="#">Filtrar</a></li>
       </ul>
       <ul class="menu_setting inactive">
         <li class="menu_inside"> <a href="#" id="todos">Todos</a> </li>
@@ -38,10 +39,17 @@
         <option value="2">Z-A</option>
       </select>
     </div>
+
+    <div>
+      <button class="btn-estadisticas">Estadisticas</button>
+    </div>
+
   </section>
- 
 
   <section class="cards"></section>
+  <section class="graphics">
+    <canvas id="myChart" width="400" height="400"></canvas>
+  </section>
 
   <script src="main.js" type="module"></script>
 </body>

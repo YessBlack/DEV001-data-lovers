@@ -1,6 +1,6 @@
 //Filtro para reducir el array
 export const getData = (data) => {
-  const dataReduce = data.results.slice(1,100)
+  const dataReduce = data.results.slice(1,130)
   return dataReduce
 }
 //Filtrar personajes muertos
@@ -26,33 +26,20 @@ export const getMale=(data)=>{
 }
 //Ordenar los personajes de a A-Z sin filtro
 export const ascendente=(data)=>{
-  const a=getData(data).sort(function(a,b){
-    if(a.name<b.name){
-      return -1
+  const a = data.sort(function(a,b){
+    if (a.name < b.name) {
+      return -1;
     }
-  }
-  )
+  })
   return a
  }
 
 //Ordenar los personajes de a Z-A sin filtro
 export const descendente=(data)=>{
- const b=getData(data).sort(function(a,b){
-   if(a.name>b.name){
-     return -1
-   }
- }
- )
- return b
-}
-
-//Ordenar los personajes de a Z-A sin filtro
-export const descendente=(data)=>{
-  const b=getData(data).sort(function(a,b){
-    if(a.name>b.name){
-      return -1
-    }
+ const b=data.sort(function(a,b){
+  if (a.name > b.name) {
+    return -1;
   }
-  )
-  return b
+})
+ return b
 }

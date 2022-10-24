@@ -1,14 +1,14 @@
-import { getData, getDeads, getAlive,getMale, getFemale } from '../src/data.js';
+import { getData, getDeads, getAlive,getMale, getFemale,ascendente,descendente } from '../src/data.js';
 
 import data from '../src/data/rickandmorty/rickandmorty.js';
 
 describe('getData', () => {
-  it('Debería ', () => {
+  it('Debería ser una funcion', () => {
     expect(typeof getData).toBe('function');
   });
 
-  it('return `array`', () => {
-    expect(getData(data)).toHaveLength(99);
+  it('Deberia retornar un array con 100 personajes ', () => {
+    expect(getData(data)).toHaveLength(129);
   });
 });
 
@@ -19,7 +19,7 @@ describe('getDeads', () => {
     expect(typeof getDeads).toBe('function');
   });
 
-  it('Que getDeads(data) no tenga la palabra "Alive"', () => {
+  it('Deberia retornar un array donde status==dead', () => {
     const deads = getDeads(data);
     deads.forEach((dead) => {
       expect(dead.status).toEqual("Dead");
@@ -34,7 +34,7 @@ describe('getAlive', () => {
     expect(typeof getAlive).toBe('function');
   });
 
-  it('Que getAlive(data) no sea igual a (data)', () => {
+  it('Deberia retornar un array donde status==alive', () => {
     const alives = getAlive(data);
     alives.forEach((alive) => {
       expect(alive.status).toEqual("Alive");
@@ -49,7 +49,7 @@ describe('getMale', () => {
     expect(typeof getMale).toBe('function');
   });
 
-  it('Que getMale(data) no sea igual a (data)', () => {
+  it('Deberia retornar un array donde gender==male', () => {
     const males = getMale(data);
     males.forEach((male) => {
       expect(male.gender).toEqual("Male");
@@ -57,12 +57,13 @@ describe('getMale', () => {
   });
 
 });
+
 describe('getFemale', () => {
   it('deberia ser una función', () => {
     expect(typeof getFemale).toBe('function');
   });
 
-  it('Que getFemale(data) no sea igual a (data)', () => {
+  it('Deberia retornar un array donde gender==female', () => {
     const females = getFemale(data);
     females.forEach((female) => {
       expect(female.gender).toEqual("Female");
@@ -71,3 +72,32 @@ describe('getFemale', () => {
 
 });
 
+describe('ascendente', () => {
+  it('deberia ser una función', () => {
+    expect(typeof ascendente).toBe('function');
+  });
+
+  it('Que ascendete(data) retorne el array ordenado de la A-Z', ()=>{
+    const arrAsc = getData(data).sort((a,b) => {
+      if(a.name<b.name) {
+        return -1
+      }
+    })
+    expect(ascendente(getData(data))).toStrictEqual(arrAsc)
+  });
+});
+
+describe('descendente', () => {
+  it('deberia ser una función', () => {
+    expect(typeof ascendente).toBe('function');
+  });
+
+  it('Que ascendete(data) retorne un array ordenado de la Z-A', ()=>{
+    const arrDes = getData(data).sort((a,b) => {
+      if(a.name > b.name) {
+        return -1
+      }
+    })
+    expect(descendente(getData(data))).toStrictEqual(arrDes)
+  });
+});
