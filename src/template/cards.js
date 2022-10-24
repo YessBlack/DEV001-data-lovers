@@ -12,5 +12,4 @@ export const tarjetas = (personaje) =>{
       </div>
     </article>`
   return(tarjeta);
-}
-
+};

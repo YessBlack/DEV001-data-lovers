@@ -8,7 +8,7 @@ describe('getData', () => {
   });
 
   it('return `array`', () => {
-    expect(getData(data)).toHaveLength(99);
+    expect(getData(data)).toHaveLength(129);
   });
 });
 

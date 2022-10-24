@@ -1,6 +1,6 @@
 //Filtro para reducir el array
 export const getData = (data) => {
-  const dataReduce = data.results.slice(1,100)
+  const dataReduce = data.results.slice(1,130)
   return dataReduce
 }
 //Filtrar personajes muertos
@@ -23,6 +23,11 @@ export const getFemale=(data)=>{
 export const getMale=(data)=>{
  const arrayMale= getData(data).filter(e=>e.gender=="Male");
  return arrayMale
+}
+//Filtrar por gender Unknow
+export const getUnknow=(data)=>{
+  const arrayUnknow=getData(data).filter(e=>e.gender=="unknown");
+  return arrayUnknow
 }
 //Ordenar los personajes de a A-Z sin filtro
 export const ascendente=(data)=>{

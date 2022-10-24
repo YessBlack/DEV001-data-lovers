@@ -8,7 +8,7 @@
 :root {
   --colorPrimary: #61d718;
   --colorTitleCard: #4D6349;
-  --bgColorHeader: #02021c;;
+  --bgColorHeader: #02021c;
   --colorSecondary:#00E1FF;
 }
 body {
@@ -147,7 +147,7 @@ ul {
 
 .menu>li {
   position: relative;
-}
+  }
 
 .menu li a {
   background-color: greenyellow;
@@ -213,7 +213,18 @@ ul {
 .spacing {
   line-height: 2rem;
 }
-
+.graficos{
+  width: 800px;
+  height: 800px;
+  margin: auto;
+  }
+  footer{
+    margin-top:20px;
+    background-color:var(--bgColorHeader);
+    color:var(--colorPrimary);
+    letter-spacing: 1px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
 /* ------------------- Media Querys -----------------*/
 @media (min-width:1024px){
   .header {
