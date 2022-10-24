@@ -1,16 +1,10 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import { getData, getDeads, getAlive, getFemale, getMale,ascendente, descendente } from './data.js';
-import {tarjetas} from './template/cards.js';
-
-
+import { getData, getMale, getFemale, getAlive, getDeads } from './data.js';
+import { tarjetas } from './template/cards.js';
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
-console.log(getFemale(data));
-//Función para que el menu se abra y se cierre al darle Click
-$('.menu_filtros').addEventListener("click", () => {
-  $('.menu_setting').classList.toggle('inactive');
-})
 
+//Función para que el menu se abra y se cierre al darle Click
 $('.menu_filtros').addEventListener("click",()=>{
 $('.menu_setting').classList.toggle('inactive');})
 

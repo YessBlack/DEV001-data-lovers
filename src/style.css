@@ -115,6 +115,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  border-radius: 6px;
 }
 .busqueda {
   border: none;
@@ -200,7 +201,7 @@ a {
   color: black;
   text-decoration: none;
   display: block;
-  padding: .7rem;
+  border-radius: 6px;
 }
 .menu_setting li a:hover {
   background-color: aquamarine;
@@ -260,20 +261,39 @@ a {
 .spacing {
   line-height: 2rem;
 }
+/* ------------ GRAFICA --------------*/
+.btnGrafica{
+  border-style: none;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: var(--colorPrimary);
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+.btnGrafica:hover{
+  box-shadow: 2px 2px 10px 5px #00E1FF;
+  }
 .graficos{
   width: 800px;
   height: 800px;
   margin: auto;
-  display: none;
-}
-.footer-pg2{
-  padding: 1rem;
-  text-align: center;
-  background-color:var(--bgColorHeader);
-  color:var(--colorPrimary);
-  letter-spacing: 1px;
-  width: 100%;
-}
+  }
+  /* --------------- SORTER------------ */
+  .orden{
+    border-style: none;
+    padding:8px;
+    border-radius:6px;
+    border-color: var(--colorSecondary);
+    margin-left: 6px;
+  }
+  /* ------- FOOTER ------ */
+  footer{
+    margin-top:20px;
+    background-color:var(--bgColorHeader);
+    color:var(--colorPrimary);
+    letter-spacing: 1px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
 /* ------------------- Media Querys -----------------*/
 @media (min-width:1024px){
   .header {
