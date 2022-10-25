@@ -15,41 +15,42 @@
     <img src="img/logo.png">
   </header>
   <section class="filtro">
-    <nav class="menu">
-      <ul class="menu_filtros">
-        <span class="icon-filter "></span>
-        <li class="list-item" ><a href="#">Filtrar</a></li>
-      </ul>
-      <ul class="menu_setting inactive">
-        <li class="menu_inside"> <a href="#" id="todos">Todos</a> </li>
-        <li class="menu_inside"> <a href="#" id="hombre"> Hombre</a></li>
-        <li class="menu_inside"> <a href="#" id="mujer">Mujer</a></li>
-        <li class="menu_inside"> <a href="#" id="vivos">Vivos</a> </li>
-        <li class="menu_inside"> <a href="#" id="muertos">Muertos</a> </li>
-      </ul>
-    </nav>
-    <div class="ordenar">
-      <select  class="orden">
-        <option  value="Ordenar" selected="return-true" disabled>Ordenar por</option>
-        <option  value="1"> A-Z</option>
-        <option value="2">Z-A</option>
-      </select>
-        </div>
+    <article class="grupo-filtrar-ordenar">
+      <nav class="menu">
+        <ul class="menu_filtros">
+          <span class="icon-filter "></span>
+          <li class="list-item" >Filtrar</li>
+        </ul>
+        <ul class="menu_setting inactive">
+          <li class="menu_inside"> <a href="#" id="todos">Todos</a> </li>
+          <li class="menu_inside"> <a href="#" id="hombre"> Hombre</a></li>
+          <li class="menu_inside"> <a href="#" id="mujer">Mujer</a></li>
+          <li class="menu_inside"> <a href="#" id="vivos">Vivos</a> </li>
+          <li class="menu_inside"> <a href="#" id="muertos">Muertos</a> </li>
+        </ul>
+      </nav>
+      <div class="ordenar">
+        <select  class="orden">
+          <option  value="Ordenar" selected="return-true" disabled>Ordenar por</option>
+          <option  value="1"> A-Z</option>
+          <option value="2">Z-A</option>
+        </select>
+      </div>
+    </article>
+    <div class="grafica">
+      <button class="btnGrafica">Gráfica de personajes</button>
+    </div>
     <div class="btn-busqueda">
       <input class="busqueda" placeholder="Busca a tu personaje">
       <span class="icon-search"></span>
     </div>
-
-        <div class="grafica">
-          <button class="btnGrafica">Gráfica de personajes</button>
-         </div>
-
   </section>
 
   <section class="cards"></section>
   <section class="graficos">
     <canvas id="myChart"></canvas>
   </section>
+
  <footer class="footer-pg2">
   <p>Proyecto Data Lovers Angelica & Natalia</p>
  </footer>
