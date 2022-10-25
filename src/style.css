@@ -102,7 +102,7 @@ a {
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
+  }
 .header img {
     width: 200px;
     margin-left: 5rem;
@@ -120,6 +120,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+
   top: 0;
   display: flex;
   flex-wrap: wrap;
@@ -173,6 +174,20 @@ a {
     display:none;
 }
 .menu-filtros {
+
+
+.menu>li {
+  position: relative;
+  }
+
+.menu li a {
+  background-color: greenyellow;
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 6px;
+  margin-left: 0px;
 
 }
 .menu_filtros{

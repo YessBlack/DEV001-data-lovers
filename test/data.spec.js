@@ -1,4 +1,5 @@
-import { getData, getDeads, getAlive,getMale, getFemale,ascendente,descendente } from '../src/data.js';
+
+import { getData, getDeads, getAlive,getMale, getFemale,getUnknow,ascendente,descendente } from '../src/data.js';
 import data from '../src/data/rickandmorty/rickandmorty.js';
 
 describe('getData', () => {
@@ -70,8 +71,20 @@ describe('getFemale', () => {
   });
 
 });
+describe.only('getUnknow', () => {
+  it('deberia ser una función', () => {
+    expect(typeof getUnknow).toBe('function');
+  });
 
-describe ('ascendente',()=>{
+  it.only('Que getUnknow(data) debería retornar un arreglo donde el gender=="unknow"', () => {
+    const unknows = getUnknow(data);
+    unknows.forEach((unknow) => {
+      expect(unknow.gender).toEqual("unknow");
+    })
+  });
+
+});
+ describe ('ascendente',()=>{
   it('Debería ser una función', ()=>{
     expect(typeof ascendente).toBe('function');
   });

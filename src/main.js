@@ -1,6 +1,7 @@
 import { getData, getDeads, getAlive, getFemale, getMale, getUnknow, ascendente, descendente } from './data.js';
 import { tarjetas } from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
+
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
 //Función para que el menu se abra y se cierre al darle Click
@@ -165,4 +166,9 @@ $('.btnGrafica').addEventListener("click", () => {
     }
   });
   $('.cards').innerHTML = "";
+
+})
+  return new Chart
+  console.log(myChart);
 });
+
