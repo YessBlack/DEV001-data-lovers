@@ -34,10 +34,9 @@ export const ascendente=(data)=>{
   const a= data.sort((a,b)=>{
     if(a.name<b.name){
       return -1 }
-      }
-
-  )
-  return a }
+    })
+  return a
+}
 
 //Ordenar los personajes de a Z-A sin filtro
 export const descendente=(data)=>{

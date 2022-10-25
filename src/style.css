@@ -7,12 +7,19 @@
 }
 :root {
   --colorPrimary: #61d718;
+  --colorButtons: greenyellow;
   --colorTitleCard: #4D6349;
   --bgColorHeader: #02021c;
   --colorSecondary:#00E1FF;
 }
 body {
   font-family: 'Patrick Hand', cursive;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
 /* ---------------  Pagina Index ---------------*/
 .header-pg1 {
@@ -101,7 +108,11 @@ body {
     margin-left: 5rem;
 }
 /* ------------------- FILTROS -----------------*/
-.filtro {
+.grupo-filtrar-ordenar {
+  display: flex;
+  align-items: center;
+}
+.filtro{
   position: sticky;
   width: 100%;
   background-color: var(--bgColorHeader);
@@ -109,15 +120,18 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  top:0;
-  }
+
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
 .busqueda {
   border: none;
   border-radius: 50px 0px 0px 50px;
   padding: 10px;
-  border-top: 1px solid var(--colorPrimary);
-  border-left: 1px solid var(--colorPrimary);
-  border-bottom: 1px solid var(--colorPrimary);
+  border-top: 1px solid var(--colorSecondary);
+  border-left: 1px solid var(--colorSecondary);
+  border-bottom: 1px solid var(--colorSecondary);
 }
 .busqueda:focus {
   outline: none;
@@ -130,21 +144,37 @@ body {
   background-color: white;
   padding: 6.8px;
   border-radius: 0px 50px 50px 0px;
-  border-top: 1px solid var(--colorPrimary);
-  border-right: 1px solid var(--colorPrimary);
-  border-bottom: 1px solid var(--colorPrimary);
+  border-top: 1px solid var(--colorSecondary);
+  border-right: 1px solid var(--colorSecondary);
+  border-bottom: 1px solid var(--colorSecondary);
 }
-
-/* ------------------- MENU -----------------*/
+.orden{
+  border-style: none;
+  padding:8px;
+  border-radius:6px;
+  border-color: var(--colorSecondary);
+  margin-left: 6px;
+  padding: .8rem;
+  background-color: var(--colorSecondary);
+}
+.btnGrafica{
+  border-style: none;
+  border-radius: 6px;
+  background-color: var(--colorButtons);
+  padding: .8rem;
+}
+.btnGrafica:hover{
+  box-shadow: 2px 2px 10px 5px #00E1FF;
+}
+/* -------- MENU ---------*/
 .active {
   display: inline-block;
 }
 .inactive{
     display:none;
 }
-ul {
-  list-style: none;
-}
+.menu-filtros {
+
 
 .menu>li {
   position: relative;
@@ -158,25 +188,36 @@ ul {
   display: block;
   border-radius: 6px;
   margin-left: 0px;
-}
 
-.menu li a:hover {
-  background-color: aquamarine;
 }
-
+.menu_filtros{
+  width:150px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--colorButtons);
+  align-items: center;
+  padding: .7rem;
+  border-radius: 10px;
+}
+.menu_filtros li a {
+  color: black;
+}
 .menu_setting {
   position: absolute;
-  min-width: 140px;
+  min-width: 150px;
+  background-color: var(--colorButtons);
+  border-radius: 10px;
+}
+.menu_setting li a {
+  color: black;
+}
+.menu_setting li:hover {
+  background-color: aquamarine;
+}
+.menu_setting li{
+  padding: .7rem;
 }
 
-.menu_filtros {
-  padding-top: 10px;
-  border-radius: 20px;
-  border: none;
-  font-family: 'Lucida Sans', sans-serif;
-  font-weight: bold;
-  min-width: 140px;
-}
 /* ------------------- CARDS -----------------*/
 .cards {
   display: flex;
@@ -190,7 +231,7 @@ ul {
   max-width: 200px;
   width: 100%;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   margin-top:16px;
   margin: 1rem;
 }
@@ -217,37 +258,21 @@ ul {
   line-height: 2rem;
 }
 /* ------------ GRAFICA --------------*/
-.btnGrafica{
-  border-style: none;
-  padding: 10px;
-  border-radius: 6px;
-  background-color: var(--colorPrimary);
-  font-weight: bold;
-  letter-spacing: .5px;
-}
-.btnGrafica:hover{
-  box-shadow: 2px 2px 10px 5px #00E1FF;
-  }
+
 .graficos{
   width: 800px;
   height: 800px;
   margin: auto;
-  }
-  /* --------------- SORTER------------ */
-  .orden{
-    border-style: none;
-    padding:8px;
-    border-radius:6px;
-    border-color: var(--colorSecondary);
-    margin-left: 6px;
-  }
-  /* ------- FOOTER ------ */
-  footer{
-    margin-top:20px;
-    background-color:var(--bgColorHeader);
-    color:var(--colorPrimary);
-    letter-spacing: 1px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+  display: none;
+}
+/* ------- FOOTER ------ */
+.footer-pg2{
+  margin-top:20px;
+  background-color:var(--bgColorHeader);
+  color:var(--colorPrimary);
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 1rem;
   }
 /* ------------------- Media Querys -----------------*/
 @media (min-width:1024px){

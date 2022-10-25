@@ -4,7 +4,6 @@ import data from './data/rickandmorty/rickandmorty.js';
 
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
-console.log(getFemale(data));
 //Función para que el menu se abra y se cierre al darle Click
 $('.menu_filtros').addEventListener("click", () => {
   $('.menu_setting').classList.toggle('inactive');
@@ -93,7 +92,7 @@ $('#vivos').addEventListener("click", () => {
   $('.graficos').style.display = "none";
 })
 
-//Creo un evento al realizar click en el enlace y filtro los personajes por status "Dead" 
+//Creo un evento al realizar click en el enlace y filtro los personajes por status "Dead"
 $('#muertos').addEventListener("click", () => {
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
@@ -143,7 +142,7 @@ $('.btnGrafica').addEventListener("click", () => {
           'rgb(123, 110, 237)',
           'rgb(234, 139, 154)',
           'rgba(174, 69, 240, 0.641)',
-          'rgb(14, 167, 174)',           
+          'rgb(14, 167, 174)',
           'rgb(250, 206, 125)',
         ],
         borderColor: [
@@ -153,7 +152,7 @@ $('.btnGrafica').addEventListener("click", () => {
           'rgba(117, 21, 177, 0.641)',
           'rgb(83, 214, 250)',
           'orange',
-        
+
         ],
         borderWidth: 1
       }]
@@ -167,6 +166,9 @@ $('.btnGrafica').addEventListener("click", () => {
     }
   });
   $('.cards').innerHTML = "";
+
+})
   return new Chart
   console.log(myChart);
 });
+
