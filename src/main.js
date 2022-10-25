@@ -1,7 +1,7 @@
 import { getData, getDeads, getAlive, getFemale, getMale, getUnknow, ascendente, descendente } from './data.js';
 import { tarjetas } from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
-console.log((data.results).filter(e=>e.species=="Disease"))
+
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
 console.log(getFemale(data));
@@ -167,4 +167,6 @@ $('.btnGrafica').addEventListener("click", () => {
     }
   });
   $('.cards').innerHTML = "";
+  return new Chart
+  console.log(myChart);
 });
