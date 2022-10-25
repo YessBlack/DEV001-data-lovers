@@ -108,9 +108,8 @@ $('#muertos').addEventListener("click", () => {
   sortData(getDeads(data))
   $('.graficos').style.display = "none";
 })
-
-//Busqueda de personjaes le agrego evento al input con keyup
-$('.busqueda').addEventListener("keyup", () => {
+  //Busqueda de personjaes le agrego evento al input con keyup
+ $('.busqueda').addEventListener("keyup", () => {
   //busqueda de personaje con indexOf
   const busqueda = document.querySelector(".busqueda")
   let textoBusqueda = busqueda.value.toLowerCase();
@@ -124,9 +123,8 @@ $('.busqueda').addEventListener("keyup", () => {
   }
   $('.graficos').style.display = "none";
 });
-
 $('.btnGrafica').addEventListener("click", () => {
-  $('.graficos').setAttribute("style", "display:block");
+    $('.graficos').setAttribute("style", "display:block");
   const grafica = document.getElementById('myChart').getContext('2d');
   const personajes = ["Todos", "Hombres", "Mujeres","Género desconocido", "Vivos", "Muertos"]
   const myChart = new Chart(grafica, {
