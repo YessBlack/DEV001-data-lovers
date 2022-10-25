@@ -3,15 +3,20 @@ import { tarjetas } from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
+//Buscador mobile
+let anchura = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+if (anchura <= 748) {
+  $('.icon-search').addEventListener("click", () => {
+    $('.menu').classList.toggle('ocultar');
+    $('.orden').classList.toggle('ocultar');
+    $('.btnGrafica').classList.toggle('ocultar');
+    $('.busqueda').classList.toggle('mostrar');
+  })
+}
 //Función para que el menu se abra y se cierre al darle Click
 $('.menu_filtros').addEventListener("click", () => {
   $('.menu_setting').classList.toggle('inactive');
 })
-
-$('.menu_setting').addEventListener("click", () => {
-  $('.menu_setting').classList.toggle('inactive');
-})
-
 //Seleccionar como ordenar
 const sortData = (data) => {
   $('.orden').addEventListener("change", () => {
