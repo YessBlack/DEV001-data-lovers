@@ -48,7 +48,6 @@ a {
 .spikes {
   position: relative;
 }
-
 .spikes::after {
   content: '';
   position: absolute;
