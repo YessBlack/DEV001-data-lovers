@@ -1,6 +1,7 @@
 import { getData, getDeads, getAlive, getFemale, getMale, getUnknow, ascendente, descendente } from './data.js';
 import { tarjetas } from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
+
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
 //Buscador mobile
