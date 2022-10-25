@@ -298,7 +298,8 @@ a {
   }
   .orden{
     border-style: none;
-    padding:8px;
+    padding:12px;
+    width: 120px;
     border-radius:6px;
     border-color: var(--colorSecondary);
     margin-left: 6px;
