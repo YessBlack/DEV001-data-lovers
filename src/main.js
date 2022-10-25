@@ -4,6 +4,17 @@ import data from './data/rickandmorty/rickandmorty.js';
 
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
+
+//Buscador mobile
+let anchura = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+if (anchura <= 748) {
+  $('.icon-search').addEventListener("click", () => {
+    $('.menu').classList.toggle('ocultar');
+    $('.orden').classList.toggle('ocultar');
+    $('.btnGrafica').classList.toggle('ocultar');
+    $('.busqueda').classList.toggle('mostrar');
+  })
+}
 //Función para que el menu se abra y se cierre al darle Click
 $('.menu_filtros').addEventListener("click", () => {
   $('.menu_setting').classList.toggle('inactive');
@@ -12,7 +23,6 @@ $('.menu_filtros').addEventListener("click", () => {
 $('.menu_setting').addEventListener("click", () => {
   $('.menu_setting').classList.toggle('inactive');
 })
-
 //Seleccionar como ordenar
 const sortData = (data) => {
   $('.orden').addEventListener("change", () => {
@@ -102,10 +112,9 @@ $('#muertos').addEventListener("click", () => {
   })
   sortData(getDeads(data))
   $('.graficos').style.display = "none";
-})
-
-//Busqueda de personjaes le agrego evento al input con keyup
-$('.busqueda').addEventListener("keyup", () => {
+}) 
+  //Busqueda de personjaes le agrego evento al input con keyup
+ $('.busqueda').addEventListener("keyup", () => {
   //busqueda de personaje con indexOf
   const busqueda = document.querySelector(".busqueda")
   let textoBusqueda = busqueda.value.toLowerCase();
@@ -119,9 +128,8 @@ $('.busqueda').addEventListener("keyup", () => {
   }
   $('.graficos').style.display = "none";
 });
-
 $('.btnGrafica').addEventListener("click", () => {
-  $('.graficos').setAttribute("style", "display:block");
+    $('.graficos').setAttribute("style", "display:block");
   const grafica = document.getElementById('myChart').getContext('2d');
   const personajes = ["Todos", "Hombres", "Mujeres","Género desconocido", "Vivos", "Muertos"]
   const myChart = new Chart(grafica, {
@@ -167,8 +175,5 @@ $('.btnGrafica').addEventListener("click", () => {
   });
   $('.cards').innerHTML = "";
 
-})
-  return new Chart
-  console.log(myChart);
 });
 
