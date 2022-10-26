@@ -4,6 +4,7 @@ import data from './data/rickandmorty/rickandmorty.js';
 
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
+
 //Buscador mobile
 let anchura = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 if (anchura <= 748) {
@@ -14,10 +15,22 @@ if (anchura <= 748) {
     $('.busqueda').classList.toggle('mostrar');
   })
 }
+
 //Función para que el menu se abra y se cierre al darle Click
 $('.menu_filtros').addEventListener("click", () => {
   $('.menu_setting').classList.toggle('inactive');
 })
+
+/*
+fetch('./data/rickandmorty/rickandmorty.json')
+  .then(response => {
+    response.json()})
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => console.log(error))
+*/
+
 //Seleccionar como ordenar
 const sortData = (data) => {
   $('.orden').addEventListener("change", () => {
@@ -41,8 +54,10 @@ const sortData = (data) => {
     $('.graficos').style.display = "none";
   })
 };
+
 //Retorna el resultado de la fx de tarjetas, para realizarla
 getData(data).forEach(personaje => {
+  $('.orden').value = "Ordenar";
   $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje))
   sortData(getData(data))
   $('.graficos').style.display = "none";
@@ -50,6 +65,7 @@ getData(data).forEach(personaje => {
 
 //Creo un evento para volver a ver las tarjetas de todos los personajes
 $('#todos').addEventListener("click", () => {
+  $('.orden').value = "Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resulTodos = getData(data);
@@ -62,7 +78,7 @@ $('#todos').addEventListener("click", () => {
 
 // Creo un evento que al realizar click se muestres los personajes filtrados por gender"Male"
 $('#hombre').addEventListener("click", () => {
-
+  $('.orden').value = "Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resultMale = getMale(data);
@@ -75,6 +91,7 @@ $('#hombre').addEventListener("click", () => {
 
 // Creo un evento que al realizar click se muestres los personajes filtrados por gender "Female"
 $('#mujer').addEventListener("click", () => {
+  $('.orden').value = "Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resultFemale = getFemale(data);
@@ -87,6 +104,7 @@ $('#mujer').addEventListener("click", () => {
 
 // Creo un evento que al realizar click se muestres los personajes filtrados por gender "Alive"
 $('#vivos').addEventListener("click", () => {
+  $('.orden').value = "Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resultAlive = getAlive(data);
@@ -99,6 +117,7 @@ $('#vivos').addEventListener("click", () => {
 
 //Creo un evento al realizar click en el enlace y filtro los personajes por status "Dead"
 $('#muertos').addEventListener("click", () => {
+  $('.orden').value = "Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resultDead = getDeads(data);
@@ -108,9 +127,9 @@ $('#muertos').addEventListener("click", () => {
   sortData(getDeads(data))
   $('.graficos').style.display = "none";
 })
-  //Busqueda de personjaes le agrego evento al input con keyup
- $('.busqueda').addEventListener("keyup", () => {
-  //busqueda de personaje con indexOf
+
+//Busqueda de personjaes le agrego evento al input con keyup
+$('.busqueda').addEventListener("keyup", () => {
   const busqueda = document.querySelector(".busqueda")
   let textoBusqueda = busqueda.value.toLowerCase();
   $('.cards').innerHTML = "";
@@ -118,13 +137,14 @@ $('#muertos').addEventListener("click", () => {
     let nombrePersonaje = nombre.name.toLowerCase();
     if (nombrePersonaje.indexOf(textoBusqueda) != -1) {
       $('.cards').insertAdjacentHTML("beforeend", tarjetas(nombre));
-
     }
   }
   $('.graficos').style.display = "none";
 });
+
+//Graficos - CharsJS
 $('.btnGrafica').addEventListener("click", () => {
-    $('.graficos').setAttribute("style", "display:block");
+  $('.graficos').setAttribute("style", "display:block");
   const grafica = document.getElementById('myChart').getContext('2d');
   const personajes = ["Todos", "Hombres", "Mujeres","Género desconocido", "Vivos", "Muertos"]
   const myChart = new Chart(grafica, {
@@ -169,4 +189,6 @@ $('.btnGrafica').addEventListener("click", () => {
     }
   });
   $('.cards').innerHTML = "";
+  console.log(myChart)
+
 });

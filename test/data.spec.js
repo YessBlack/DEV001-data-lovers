@@ -8,10 +8,9 @@ describe('getData', () => {
   });
 
   it('return `array`', () => {
-    expect(getData(data)).toHaveLength(99);
+    expect(getData(data)).toHaveLength(129);
   });
 });
-
 
 describe('getDeads', () => {
 
@@ -24,9 +23,7 @@ describe('getDeads', () => {
     deads.forEach((dead) => {
       expect(dead.status).toEqual("Dead");
     })
-
   });
-
 });
 
 describe('getAlive', () => {
@@ -71,20 +68,20 @@ describe('getFemale', () => {
   });
 
 });
-describe.only('getUnknow', () => {
+describe('getUnknow', () => {
   it('deberia ser una función', () => {
     expect(typeof getUnknow).toBe('function');
   });
 
-  it.only('Que getUnknow(data) debería retornar un arreglo donde el gender=="unknow"', () => {
+  it('Que getUnknow(data) debería retornar un arreglo donde el gender=="unknown"', () => {
     const unknows = getUnknow(data);
     unknows.forEach((unknow) => {
-      expect(unknow.gender).toEqual("unknow");
+      expect(unknow.gender).toEqual("unknown");
     })
   });
 
 });
- describe ('ascendente',()=>{
+ describe('ascendente',()=>{
   it('Debería ser una función', ()=>{
     expect(typeof ascendente).toBe('function');
   });
