@@ -47,5 +47,6 @@ export const descendente=(data)=>{
  }
  )
  //console.log(Array.isArray(descendente));
- return b}
+ return b
+}
 

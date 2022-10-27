@@ -1,5 +1,5 @@
-import Chart from 'chart';
-import { getData, getDeads, getAlive, getFemale, getMale, getUnknow, ascendente, descendente } from './data.js';
+import { getData, getDeads, getAlive, getFemale, getMale, ascendente, descendente } from './data.js';
+import { printChart } from './template/graficos.js';
 import { tarjetas } from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
@@ -143,52 +143,9 @@ $('.busqueda').addEventListener("keyup", () => {
   $('.graficos').style.display = "none";
 });
 
-//Graficos - CharsJS
 $('.btnGrafica').addEventListener("click", () => {
   $('.graficos').setAttribute("style", "display:block");
   const grafica = document.getElementById('myChart').getContext('2d');
-  const personajes = ["Todos", "Hombres", "Mujeres","Género desconocido", "Vivos", "Muertos"]
-  const myChart = new Chart(grafica, {
-    type: 'bar',
-    data: {
-      labels: personajes,
-      datasets: [{
-        label: " Cantidad de Personajes",
-        data: [
-          getData(data).length,
-          getMale(data).length,
-          getFemale(data).length,
-          getUnknow(data).length,
-          getAlive(data).length,
-          getDeads(data).length],
-        backgroundColor: [
-          ' greenyellow',
-          'rgb(123, 110, 237)',
-          'rgb(234, 139, 154)',
-          'rgba(174, 69, 240, 0.641)',
-          'rgb(14, 167, 174)',
-          'rgb(250, 206, 125)',
-        ],
-        borderColor: [
-          'rgb(124, 200, 11)',
-          'rgb(41, 19, 238)',
-          'rgb(225, 29, 59)',
-          'rgba(117, 21, 177, 0.641)',
-          'rgb(83, 214, 250)',
-          'orange',
-
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+  printChart(grafica);
   $('.cards').innerHTML = "";
-  console.log(myChart)
 });
