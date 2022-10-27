@@ -1,10 +1,15 @@
 import { getData, getDeads, getAlive, getFemale, getMale, ascendente, descendente } from './data.js';
-import { printChart } from './template/graficos.js';
-import { tarjetas } from './template/cards.js';
+import { tarjetas,printChart,welcomePage } from './template/';
 import data from './data/rickandmorty/rickandmorty.js';
 
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
+
+//Carga pagina de bienvenida
+
+window.addEventListener('DOMContentLoaded', () => {
+  welcomePage();
+})
 
 //Buscador mobile
 let anchura = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
