@@ -1,3 +1,4 @@
+import Chart from 'chart';
 import { getData, getDeads, getAlive, getFemale, getMale, getUnknow, ascendente, descendente } from './data.js';
 import { tarjetas } from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
@@ -190,5 +191,4 @@ $('.btnGrafica').addEventListener("click", () => {
   });
   $('.cards').innerHTML = "";
   console.log(myChart)
-
 });
