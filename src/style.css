@@ -19,7 +19,12 @@ button,
 select {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-family: 'Trispace', sans-serif;
-
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
 .visionUno{
   display:block;
@@ -27,14 +32,6 @@ select {
 .visionDos{
   display:none;
 }
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 /* ---------------  Pagina Index ---------------*/
 .header-pg1 {
   padding: 1rem;
@@ -42,6 +39,7 @@ a {
   color: var(--colorPrimary);
   text-align: center;
   position: fixed;
+  z-index: 100;
   width: 100%;
 }
 
