@@ -1,11 +1,18 @@
 import { getData, getDeads, getAlive, getFemale, getMale, ascendente, descendente } from './data.js';
-import { printChart } from './template/graficos.js';
+import { printChart } from './template/charts.js';
 import { tarjetas } from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
 
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
+//Desplegar vision dos HTML
+$('.btn-iniciar').addEventListener("click",()=>{
+  $('.visionUno').innerHTML="";
+    $('.visionDos').style.display="block";
+    
+})
+
 //Buscador mobile
 let anchura = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 if (anchura <= 748) {
@@ -19,6 +26,9 @@ if (anchura <= 748) {
 
 //Función para que el menu se abra y se cierre al darle Click
 $('.menu_filtros').addEventListener("click", () => {
+  $('.menu_setting').classList.toggle('inactive');
+})
+$('.menu_setting').addEventListener("click", () => {
   $('.menu_setting').classList.toggle('inactive');
 })
 
