@@ -8,8 +8,7 @@ const $ = (selector) => document.querySelector(selector);
 //Desplegar vision dos HTML
 $('.btn-iniciar').addEventListener("click",()=>{
   $('.visionUno').innerHTML="";
-    $('.visionDos').style.display="block";
-
+  $('.visionDos').style.display="block";
 })
 
 //Buscador mobile
