@@ -4,6 +4,7 @@ import { tarjetas } from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
 
+
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
 //Desplegar vision dos HTML
