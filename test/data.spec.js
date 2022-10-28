@@ -18,7 +18,7 @@ describe('getDeads', () => {
 
   it('Que getDeads(data) solo contenga status=="Dead"', () => {
     const deads = getDeads(data);
-        expect(deads.map(e=>e.status)).toEqual(Array.from(deads,()=>'Dead'));
+        expect(deads.map(e=>e.status)).toEqual(Array.from(deads,() => 'Dead'));
      });
 
   });
