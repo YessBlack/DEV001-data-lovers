@@ -27,5 +27,9 @@
   },
   "engines": {
     "node": ">=16.x"
+  },
+  "devDependencies": {
+    "chart.js": "^3.9.1",
+    "eslint-config-chartjs": "^0.3.0"
   }
 }

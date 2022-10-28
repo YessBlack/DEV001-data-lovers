@@ -2,9 +2,9 @@ import { getData, getDeads, getAlive, getFemale, getMale, getUnknow, ascendente,
 import { tarjetas } from './template/cards.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
+
 //Variable que me sirve para cualquier selector del DOM
 const $ = (selector) => document.querySelector(selector);
-
 //Buscador mobile
 let anchura = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 if (anchura <= 748) {
@@ -24,30 +24,32 @@ $('.menu_setting').addEventListener("click", () => {
   $('.menu_setting').classList.toggle('inactive');
 })
 //Seleccionar como ordenar
-const sortData = (data) => {
-  $('.orden').addEventListener("change", () => {
-    const opcion = $('.orden').value;
-    if (opcion == "1") {
-      const resultA = ascendente(data);
-      $('.cards').innerHTML = "";
-      //Coloco los personajes en las tarjetas
-      resultA.forEach(personaje => {
-        $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje));
-      })
-    }
-    else {
-      const ordenB = descendente(data);
-      $('.cards').innerHTML = "";
-      //Coloco los personajes en las tarjetas
-      ordenB.forEach(personaje => {
-        $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje));
-      })
-    }
-    $('.graficos').style.display = "none";
-  })
+const sortData=(data)=>{
+$('.orden').addEventListener("change", () => {
+  const opcion = $('.orden').value;
+  if (opcion == "1") {
+    const resultA = ascendente(data);
+    $('.cards').innerHTML = "";
+    //Coloco los personajes en las tarjetas
+    resultA.forEach(personaje => {
+      $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje));
+    })
+  }
+  else {
+    const ordenB = descendente(data);
+    $('.cards').innerHTML = "";
+    //Coloco los personajes en las tarjetas
+    ordenB.forEach(personaje => {
+      $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje));
+    })
+  }
+  $('.graficos').style.display = "none";
+})
 };
+
 //Retorna el resultado de la fx de tarjetas, para realizarla
 getData(data).forEach(personaje => {
+  $('.orden').value="Ordenar";
   $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje))
   sortData(getData(data))
   $('.graficos').style.display = "none";
@@ -55,62 +57,66 @@ getData(data).forEach(personaje => {
 
 //Creo un evento para volver a ver las tarjetas de todos los personajes
 $('#todos').addEventListener("click", () => {
+  $('.orden').value="Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resulTodos = getData(data);
   resulTodos.forEach(personaje => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personaje));
   })
-  sortData(getData(data))
+  sortData(resulTodos)
   $('.graficos').style.display = "none";
 })
 
 // Creo un evento que al realizar click se muestres los personajes filtrados por gender"Male"
 $('#hombre').addEventListener("click", () => {
-
+  $('.orden').value="Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resultMale = getMale(data);
   resultMale.forEach(personajeMale => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personajeMale));
   })
-  sortData(getMale(data))
+  sortData(resultMale);
   $('.graficos').style.display = "none";
 })
 
 // Creo un evento que al realizar click se muestres los personajes filtrados por gender "Female"
 $('#mujer').addEventListener("click", () => {
+  $('.orden').value="Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resultFemale = getFemale(data);
   resultFemale.forEach(personajeFemale => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personajeFemale));
   })
-  sortData(getFemale(data))
+  sortData(resultFemale)
   $('.graficos').style.display = "none";
 })
 
 // Creo un evento que al realizar click se muestres los personajes filtrados por gender "Alive"
 $('#vivos').addEventListener("click", () => {
+  $('.orden').value="Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resultAlive = getAlive(data);
   resultAlive.forEach(personajeAlive => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personajeAlive));
   })
-  sortData(getAlive(data))
+  sortData(resultAlive)
   $('.graficos').style.display = "none";
 })
 
 //Creo un evento al realizar click en el enlace y filtro los personajes por status "Dead"
 $('#muertos').addEventListener("click", () => {
+  $('.orden').value="Ordenar";
   $('.cards').innerHTML = "";
   //Coloco los personajes en las tarjetas
   const resultDead = getDeads(data);
   resultDead.forEach(personajeDead => {
     $('.cards').insertAdjacentHTML("beforeend", tarjetas(personajeDead));
   })
-  sortData(getDeads(data))
+  sortData(resultDead)
   $('.graficos').style.display = "none";
 }) 
   //Busqueda de personjaes le agrego evento al input con keyup
@@ -129,10 +135,11 @@ $('#muertos').addEventListener("click", () => {
   $('.graficos').style.display = "none";
 });
 $('.btnGrafica').addEventListener("click", () => {
+  /*eslint no-undef: "error"*/
     $('.graficos').setAttribute("style", "display:block");
-  const grafica = document.getElementById('myChart').getContext('2d');
-  const personajes = ["Todos", "Hombres", "Mujeres","Género desconocido", "Vivos", "Muertos"]
-  const myChart = new Chart(grafica, {
+  const ctx= document.getElementById('myChart').getContext('2d');
+  const personajes = ["Todos", "Hombres", "Mujeres","Género desconocido", "Vivos", "Muertos"];
+    const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: personajes,
@@ -169,11 +176,12 @@ $('.btnGrafica').addEventListener("click", () => {
       scales: {
         y: {
           beginAtZero: true
-        }
+        } 
       }
-    }
-  });
+    } 
+       })
+      console.log(myChart);
   $('.cards').innerHTML = "";
-
+  
 });
 

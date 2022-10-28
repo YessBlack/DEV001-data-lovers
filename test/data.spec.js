@@ -8,7 +8,7 @@ describe('getData', () => {
   });
 
   it('return `array`', () => {
-    expect(getData(data)).toHaveLength(99);
+    expect(getData(data)).toHaveLength(129);
   });
 });
 
@@ -19,26 +19,21 @@ describe('getDeads', () => {
     expect(typeof getDeads).toBe('function');
   });
 
-  it('Que getDeads(data) no tenga la palabra "Alive"', () => {
+  it('Que getDeads(data) solo contenga status=="Dead"', () => {
     const deads = getDeads(data);
-    deads.forEach((dead) => {
-      expect(dead.status).toEqual("Dead");
-    })
+        expect(deads.map(e=>e.status)).toEqual(Array.from(deads,()=>'Dead'));
+     });
 
   });
-
-});
 
 describe('getAlive', () => {
   it('deberia ser una función', () => {
     expect(typeof getAlive).toBe('function');
   });
 
-  it('Que getAlive(data) no sea igual a (data)', () => {
+  it('Que getAlive(data) que solo contenga status=="Alive"', () => {
     const alives = getAlive(data);
-    alives.forEach((alive) => {
-      expect(alive.status).toEqual("Alive");
-    })
+    expect(alives.map(e=>e.status)).toEqual(Array.from(alives,()=>'Alive'));
   });
 
 });
@@ -49,41 +44,34 @@ describe('getMale', () => {
     expect(typeof getMale).toBe('function');
   });
 
-  it('Que getMale(data) no sea igual a (data)', () => {
+  it('Que getMale(data) contenga solo gender=="Male"', () => {
     const males = getMale(data);
-    males.forEach((male) => {
-      expect(male.gender).toEqual("Male");
-    })
+    expect(males.map(e=>e.gender)).toEqual(Array.from(males,()=>'Male'));
+  });
   });
 
-});
 
 describe('getFemale', () => {
   it('deberia ser una función', () => {
     expect(typeof getFemale).toBe('function');
   });
 
-  it('Que getFemale(data) no sea igual a (data)', () => {
+  it('Que getFemale(data) solo contenga gender=="Female', () => {
     const females = getFemale(data);
-    females.forEach((female) => {
-      expect(female.gender).toEqual("Female");
-    })
+    expect(females.map(e=>e.gender)).toEqual(Array.from(females,()=>'Female'));
+     });
   });
 
-});
-describe.only('getUnknow', () => {
+describe('getUnknow', () => {
   it('deberia ser una función', () => {
     expect(typeof getUnknow).toBe('function');
   });
 
-  it.only('Que getUnknow(data) debería retornar un arreglo donde el gender=="unknow"', () => {
+  it('Que getUnknow(data) debería retornar un arreglo donde el gender=="unknown"', () => {
     const unknows = getUnknow(data);
-    unknows.forEach((unknow) => {
-      expect(unknow.gender).toEqual("unknow");
-    })
+    expect(unknows.map(e=>e.gender)).toEqual(Array.from(unknows,()=>'unknown'));
+     });
   });
-
-});
  describe ('ascendente',()=>{
   it('Debería ser una función', ()=>{
     expect(typeof ascendente).toBe('function');
@@ -110,4 +98,4 @@ it('Que descendente(data) retorne el array ordenado de la Z-A', ()=>{
       return -1 }
       }));
   expect(descendente(getData(data))).toStrictEqual(arrDesc)
-});
+})
