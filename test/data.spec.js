@@ -1,4 +1,3 @@
-
 import { getData, getDeads, getAlive,getMale, getFemale,getUnknow,ascendente,descendente } from '../src/data.js';
 import data from '../src/data/rickandmorty/rickandmorty.js';
 
@@ -12,9 +11,7 @@ describe('getData', () => {
   });
 });
 
-
 describe('getDeads', () => {
-
   it('deberia ser una función', () => {
     expect(typeof getDeads).toBe('function');
   });
@@ -35,19 +32,16 @@ describe('getAlive', () => {
     const alives = getAlive(data);
     expect(alives.map(e=>e.status)).toEqual(Array.from(alives,()=>'Alive'));
   });
-
 });
 
 describe('getMale', () => {
-
   it('deberia ser una función', () => {
     expect(typeof getMale).toBe('function');
   });
 
   it('Que getMale(data) contenga solo gender=="Male"', () => {
     const males = getMale(data);
-    expect(males.map(e=>e.gender)).toEqual(Array.from(males,()=>'Male'));
-  });
+    expect(males.map(e => e.gender)).toEqual(Array.from(males, () => 'Male'));
   });
 
 
@@ -78,12 +72,13 @@ describe('getUnknow', () => {
   });
 });
 
-it('Que ascendete(data) retorne el array ordenado de la A-Z', ()=>{
+  it('Que ascendete(data) retorne el array ordenado de la A-Z', ()=>{
   const arrAesc=getData(data).sort(((a,b)=>{
     if(a.name<b.name){
       return -1 }
       }));
-  expect(ascendente(getData(data))).toStrictEqual(arrAesc)
+    expect(ascendente(getData(data))).toStrictEqual(arrAesc)
+  });
 });
 
 describe ('descendente',()=>{
@@ -98,4 +93,4 @@ it('Que descendente(data) retorne el array ordenado de la Z-A', ()=>{
       return -1 }
       }));
   expect(descendente(getData(data))).toStrictEqual(arrDesc)
-})
+});
